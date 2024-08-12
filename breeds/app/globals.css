@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 230, 255, 242;
+  --background-end-rgb: 0, 51, 24;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +24,53 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} 
+
+@layer components {
+    .cards {
+        @apply  bg-transparent p-4 justify-items-center grid grid-cols-1 gap-2  sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-5 xl:grid-cols-5 xl:gap-7 
+    }
+
+    .imageContainer{
+        @apply h-[170px] max-w-full 
+    }
+
+    .heroImgContainer{
+        @apply max-w-72 md:max-w-96 min-w-80 h-80 md:pr-6 md:float-right xl:translate-x-[80%] mx-auto
+    }
+    .image {
+        @apply rounded-md object-cover w-full h-full
+    }
+
+    .card{
+        @apply overflow-hidden w-full h-60 max-w-72 border-13 border-transparent text-gray-700 bg-gray-50 shadow-lg rounded-xl 
+    }
+
+    .title {
+        @apply   text-gray-700 pl-1 pr-1 pb-2 text-center font-sans text-xl antialiased font-semibold leading-6 
+    }
+
+    .boldTitle {
+        @apply   text-gray-700 pl-1 pr-1 pt-2 pb-3 text-center font-sans text-xl antialiased font-extrabold text-3xl
+    }
+  
+    .text{
+        @apply  text-gray-700 font-sans
+    }
+
+    .cardGeometry{
+        @apply block h-full flex flex-col justify-between
+    }
+    
+    .petDescriptionContainer{
+        @apply my-5 flex flex-col-reverse gap-5 md:my-7 md:flex md:flex-row 
+    }
+
+    .petDetailsPage{
+        @apply text md:pl-8 mx-auto xl:mx-0
+    }
+
+    .descriptionContainer{
+        @apply xl:flex xl:flex-col xl:flex-wrap xl:max-h-[500px] xl:w-[35vw] mt-6 md:mt-0
+    }
 }
